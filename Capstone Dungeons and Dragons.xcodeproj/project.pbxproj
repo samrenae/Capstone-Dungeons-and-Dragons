@@ -8,17 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		2D6193B429860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193B329860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift */; };
-		2D6193B629860A8C001FCF77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193B529860A8C001FCF77 /* ContentView.swift */; };
+		2D6193B629860A8C001FCF77 /* LoginCapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193B529860A8C001FCF77 /* LoginCapView.swift */; };
 		2D6193B829860A8D001FCF77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6193B729860A8D001FCF77 /* Assets.xcassets */; };
 		2D6193BB29860A8D001FCF77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6193BA29860A8D001FCF77 /* Preview Assets.xcassets */; };
+		2D6193C329860B52001FCF77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6193C229860B52001FCF77 /* FirebaseAuth */; };
+		2D6193C529860B52001FCF77 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6193C429860B52001FCF77 /* FirebaseFirestore */; };
+		2D6193C729860B52001FCF77 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6193C629860B52001FCF77 /* FirebaseFirestoreSwift */; };
+		2D6193C929860B52001FCF77 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6193C829860B52001FCF77 /* FirebaseStorage */; };
+		2D6193CB29860C3B001FCF77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D6193CA29860C3B001FCF77 /* GoogleService-Info.plist */; };
+		2D6193CD29860CD9001FCF77 /* HomePostLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193CC29860CD9001FCF77 /* HomePostLoginView.swift */; };
+		2D6193CF29860D07001FCF77 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193CE29860D07001FCF77 /* CharacterDetailView.swift */; };
+		2D6193D129860D11001FCF77 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193D029860D11001FCF77 /* Character.swift */; };
+		2D6193D329860D20001FCF77 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193D229860D20001FCF77 /* CharacterViewModel.swift */; };
+		2D6193D529860D2E001FCF77 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193D429860D2E001FCF77 /* User.swift */; };
+		2D6193D729860D3B001FCF77 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193D629860D3B001FCF77 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D6193B029860A8C001FCF77 /* Capstone Dungeons and Dragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Capstone Dungeons and Dragons.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6193B329860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capstone_Dungeons_and_DragonsApp.swift; sourceTree = "<group>"; };
-		2D6193B529860A8C001FCF77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2D6193B529860A8C001FCF77 /* LoginCapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCapView.swift; sourceTree = "<group>"; };
 		2D6193B729860A8D001FCF77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D6193BA29860A8D001FCF77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2D6193CA29860C3B001FCF77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D6193CC29860CD9001FCF77 /* HomePostLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostLoginView.swift; sourceTree = "<group>"; };
+		2D6193CE29860D07001FCF77 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		2D6193D029860D11001FCF77 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		2D6193D229860D20001FCF77 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		2D6193D429860D2E001FCF77 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2D6193D629860D3B001FCF77 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +44,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6193C329860B52001FCF77 /* FirebaseAuth in Frameworks */,
+				2D6193C929860B52001FCF77 /* FirebaseStorage in Frameworks */,
+				2D6193C529860B52001FCF77 /* FirebaseFirestore in Frameworks */,
+				2D6193C729860B52001FCF77 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +74,15 @@
 			isa = PBXGroup;
 			children = (
 				2D6193B329860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift */,
-				2D6193B529860A8C001FCF77 /* ContentView.swift */,
+				2D6193B529860A8C001FCF77 /* LoginCapView.swift */,
+				2D6193D429860D2E001FCF77 /* User.swift */,
+				2D6193D629860D3B001FCF77 /* UserViewModel.swift */,
+				2D6193CC29860CD9001FCF77 /* HomePostLoginView.swift */,
+				2D6193CE29860D07001FCF77 /* CharacterDetailView.swift */,
+				2D6193D029860D11001FCF77 /* Character.swift */,
+				2D6193D229860D20001FCF77 /* CharacterViewModel.swift */,
 				2D6193B729860A8D001FCF77 /* Assets.xcassets */,
+				2D6193CA29860C3B001FCF77 /* GoogleService-Info.plist */,
 				2D6193B929860A8D001FCF77 /* Preview Content */,
 			);
 			path = "Capstone Dungeons and Dragons";
@@ -83,6 +112,12 @@
 			dependencies = (
 			);
 			name = "Capstone Dungeons and Dragons";
+			packageProductDependencies = (
+				2D6193C229860B52001FCF77 /* FirebaseAuth */,
+				2D6193C429860B52001FCF77 /* FirebaseFirestore */,
+				2D6193C629860B52001FCF77 /* FirebaseFirestoreSwift */,
+				2D6193C829860B52001FCF77 /* FirebaseStorage */,
+			);
 			productName = "Capstone Dungeons and Dragons";
 			productReference = 2D6193B029860A8C001FCF77 /* Capstone Dungeons and Dragons.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 2D6193A729860A8C001FCF77;
+			packageReferences = (
+				2D6193C129860B52001FCF77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 2D6193B129860A8C001FCF77 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +165,7 @@
 			files = (
 				2D6193BB29860A8D001FCF77 /* Preview Assets.xcassets in Resources */,
 				2D6193B829860A8D001FCF77 /* Assets.xcassets in Resources */,
+				2D6193CB29860C3B001FCF77 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +176,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D6193B629860A8C001FCF77 /* ContentView.swift in Sources */,
+				2D6193B629860A8C001FCF77 /* LoginCapView.swift in Sources */,
+				2D6193D729860D3B001FCF77 /* UserViewModel.swift in Sources */,
+				2D6193CD29860CD9001FCF77 /* HomePostLoginView.swift in Sources */,
+				2D6193D129860D11001FCF77 /* Character.swift in Sources */,
 				2D6193B429860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift in Sources */,
+				2D6193D329860D20001FCF77 /* CharacterViewModel.swift in Sources */,
+				2D6193CF29860D07001FCF77 /* CharacterDetailView.swift in Sources */,
+				2D6193D529860D2E001FCF77 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +384,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D6193C129860B52001FCF77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D6193C229860B52001FCF77 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D6193C129860B52001FCF77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2D6193C429860B52001FCF77 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D6193C129860B52001FCF77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2D6193C629860B52001FCF77 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D6193C129860B52001FCF77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		2D6193C829860B52001FCF77 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D6193C129860B52001FCF77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D6193A829860A8C001FCF77 /* Project object */;
 }
