@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     
-    @EnvironmentObject var characterVM: CharacterViewModel
+    @ObservedObject var characterVM: CharacterViewModel
     @State var character: Character
     @Environment(\.dismiss) private var dismiss
     @State var name = ""
@@ -60,6 +60,7 @@ struct CharacterDetailView: View {
 //                    }
                     Button {
                         characterVM.saveCharacter(name: name, characterClass: characterClass, race: race, background: background, alignment: alignment)
+//                        characterVM.getCharacters()
                         dismiss()
                     } label: {
                         Text("Save")
@@ -74,8 +75,8 @@ struct CharacterDetailView: View {
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            CharacterDetailView(character: Character())
-                .environmentObject(CharacterViewModel())
+            CharacterDetailView(characterVM: CharacterViewModel(), character: Character())
+//                .environmentObject(CharacterViewModel())
         }
         
     }

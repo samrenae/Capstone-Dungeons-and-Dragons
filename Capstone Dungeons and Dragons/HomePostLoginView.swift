@@ -15,18 +15,16 @@ struct HomePostLogin: View {
     @ObservedObject var charVM = CharacterViewModel()
     let db = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
+    
 //    private var characterStruct = db.collection(uid).collection("characters")
     @State private var sheetIsPresented = false
     @Environment(\.dismiss) private var dismiss
 //    var _ = getAllCharacters()
     var body: some View {
         NavigationStack {
-            
-//            print(characterStruct)
-//            var characterStruct = db.collection("users").document(uid ?? "none").collection("characters")
             List(charVM.characterList) { character in
                 NavigationLink {
-                    CharacterDetailView(character: character)
+                    CharacterDetailView(characterVM: charVM, character: character)
                 } label: {
                     Text(character.name)
                         .font(.title2)
@@ -60,9 +58,10 @@ struct HomePostLogin: View {
             }
             .sheet(isPresented: $sheetIsPresented) {
                 NavigationStack {
-                    CharacterDetailView(character: Character())
+                    CharacterDetailView(characterVM: charVM, character: Character())
                 }
-        }
+            }
+            .onAppear(perform: self.charVM.getCharacters)
         }
     }
     init() {
