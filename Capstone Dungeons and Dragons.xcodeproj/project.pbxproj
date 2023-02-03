@@ -22,6 +22,9 @@
 		2D6193D329860D20001FCF77 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193D229860D20001FCF77 /* CharacterViewModel.swift */; };
 		2D6193D529860D2E001FCF77 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193D429860D2E001FCF77 /* User.swift */; };
 		2D6193D729860D3B001FCF77 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193D629860D3B001FCF77 /* UserViewModel.swift */; };
+		2D6193D9298C9A1B001FCF77 /* AbilityScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193D8298C9A1B001FCF77 /* AbilityScoreView.swift */; };
+		2D6193DB298DA454001FCF77 /* AbilityScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193DA298DA454001FCF77 /* AbilityScores.swift */; };
+		2D6193DD298DA465001FCF77 /* AbilityScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193DC298DA465001FCF77 /* AbilityScoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		2D6193D229860D20001FCF77 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		2D6193D429860D2E001FCF77 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2D6193D629860D3B001FCF77 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		2D6193D8298C9A1B001FCF77 /* AbilityScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScoreView.swift; sourceTree = "<group>"; };
+		2D6193DA298DA454001FCF77 /* AbilityScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScores.swift; sourceTree = "<group>"; };
+		2D6193DC298DA465001FCF77 /* AbilityScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 				2D6193CE29860D07001FCF77 /* CharacterDetailView.swift */,
 				2D6193D029860D11001FCF77 /* Character.swift */,
 				2D6193D229860D20001FCF77 /* CharacterViewModel.swift */,
+				2D6193D8298C9A1B001FCF77 /* AbilityScoreView.swift */,
+				2D6193DA298DA454001FCF77 /* AbilityScores.swift */,
+				2D6193DC298DA465001FCF77 /* AbilityScoreViewModel.swift */,
 				2D6193B729860A8D001FCF77 /* Assets.xcassets */,
 				2D6193CA29860C3B001FCF77 /* GoogleService-Info.plist */,
 				2D6193B929860A8D001FCF77 /* Preview Content */,
@@ -177,7 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6193B629860A8C001FCF77 /* LoginCapView.swift in Sources */,
+				2D6193D9298C9A1B001FCF77 /* AbilityScoreView.swift in Sources */,
 				2D6193D729860D3B001FCF77 /* UserViewModel.swift in Sources */,
+				2D6193DB298DA454001FCF77 /* AbilityScores.swift in Sources */,
+				2D6193DD298DA465001FCF77 /* AbilityScoreViewModel.swift in Sources */,
 				2D6193CD29860CD9001FCF77 /* HomePostLoginView.swift in Sources */,
 				2D6193D129860D11001FCF77 /* Character.swift in Sources */,
 				2D6193B429860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift in Sources */,

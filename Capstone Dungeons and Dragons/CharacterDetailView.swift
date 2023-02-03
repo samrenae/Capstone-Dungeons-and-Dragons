@@ -17,19 +17,23 @@ struct CharacterDetailView: View {
     @State var race = ""
     @State var background = ""
     @State var alignment = ""
+    @State var level = ""
+    @State var presentSheet = false
     var body: some View {
         VStack {
             
             Group{
-                TextField("Character Name", text: $name)
+                TextField("Character Name", text: $character.name)
                     .font(.title)
-                TextField("Character Class", text: $characterClass)
+                TextField("Character Class", text: $character.characterClass)
                     .font(.title2)
-                TextField("Race", text: $race)
+                TextField("Race", text: $character.race)
                     .font(.title2)
-                TextField("Background", text: $background)
+                TextField("Background", text: $character.background)
                     .font(.title2)
-                TextField("Alignment", text: $alignment)
+                TextField("Alignment", text: $character.alignment)
+                    .font(.title2)
+                TextField("Level", text: $character.level)
                     .font(.title2)
             }
             .disabled(character.id == nil ? false : true)
@@ -54,19 +58,20 @@ struct CharacterDetailView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button("Save") {
-//                        characterVM.saveCharacter(name: name, characterClass: characterClass, race: race, background: background, alignment: alignment)
-//                        dismiss()
-//                    }
                     Button {
-                        characterVM.saveCharacter(name: name, characterClass: characterClass, race: race, background: background, alignment: alignment)
-//                        characterVM.getCharacters()
-                        dismiss()
+                        characterVM.saveCharacter(name: name, characterClass: characterClass, race: race, background: background, alignment: alignment, level: level)
+
+                        presentSheet.toggle()
                     } label: {
                         Text("Save")
                     }
 
                 }
+            }
+        }
+        .sheet(isPresented: $presentSheet) {
+            NavigationStack {
+                AbilityScoreView()
             }
         }
     }
@@ -76,7 +81,7 @@ struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             CharacterDetailView(characterVM: CharacterViewModel(), character: Character())
-//                .environmentObject(CharacterViewModel())
+
         }
         
     }

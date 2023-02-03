@@ -13,20 +13,16 @@ import FirebaseFirestore
 
 struct LoginView: View {
     
-//    enum Field {
-//        case email, password
-//    }
+
     
     @EnvironmentObject var userVM: UserViewModel
     @State var user: User
-    
-//    @State private var email = user.email
-//    @State private var password = user.password
+
     @State private var showingAlert = false
     @State private var alertMessage = ""
     @State private var buttonsDisabled = true
     @State private var presentSheet = false
-//    @FocusState private var focusField: Field?
+
     let db = Firestore.firestore()
     
     var body: some View{
@@ -37,10 +33,7 @@ struct LoginView: View {
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
                     .submitLabel(.next)
-//                    .focused($focusField, equals: .email)
-//                    .onSubmit {
-//                        focusField = .password
-//                    }
+
                     .onChange(of: user.email) { _ in
                         enableButtons()
                     }
@@ -48,10 +41,7 @@ struct LoginView: View {
                 SecureField("Password", text: $user.password)
                     .textInputAutocapitalization(.never)
                     .submitLabel(.done)
-//                    .focused($focusField, equals: .password)
-//                    .onSubmit {
-//                        focusField = nil
-//                    }
+
                     .onChange(of: user.password) { _ in
                         enableButtons()
                     }
@@ -65,30 +55,17 @@ struct LoginView: View {
             
             HStack {
                 Button {
-//                    Task {
+
                     register()
-//                        let success = await userVM.saveUser(user: user)
-//                        if success {
-////                            register()
-//                            print("I did it")
-//                        } else {
-//                            print("It didn't save")
-//                        }
-//                    }
+
                 } label: {
                     Text("Sign Up")
                 }
                 .padding(.trailing)
                 Button {
-//                    Task {
+
                     login()
-//                        let success = await userVM.saveUser(user: user)
-//                        if success {
-//                            print(user.id ?? "null")
-//                        } else {
-//                            print("It didn't save")
-//                        }
-//                    }
+
                 } label: {
                     Text("Log In")
                 }
@@ -109,7 +86,6 @@ struct LoginView: View {
                 print("Login Success!")
                 presentSheet = true
             }
-            
         }
         .fullScreenCover(isPresented: $presentSheet) {
             HomePostLogin()
