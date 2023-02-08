@@ -10,31 +10,69 @@ import SwiftUI
 struct CharacterDetailView: View {
     
     @ObservedObject var characterVM: CharacterViewModel
+    @ObservedObject var characterRM: CharacterRaceModel
+    @ObservedObject var characterCM: CharacterClassModel
+    @ObservedObject var characterAM: CharacterAlignmentModel
     @State var character: Character
     @Environment(\.dismiss) private var dismiss
     @State var name = ""
     @State var characterClass = ""
-    @State var race = ""
+    @State var race = "Dragonborn"
     @State var background = ""
     @State var alignment = ""
     @State var level = ""
-    @State var presentSheet = false
+    
     var body: some View {
         VStack {
             
-            Group{
-                TextField("Character Name", text: $character.name)
+            Section{
+                TextField("Character Name", text: $name)
                     .font(.title)
-                TextField("Character Class", text: $character.characterClass)
-                    .font(.title2)
-                TextField("Race", text: $character.race)
-                    .font(.title2)
-                TextField("Background", text: $character.background)
-                    .font(.title2)
-                TextField("Alignment", text: $character.alignment)
-                    .font(.title2)
-                TextField("Level", text: $character.level)
-                    .font(.title2)
+                HStack{
+                    Text("Please select a Class: ")
+                    Picker("Class", selection: $characterClass) {
+                        ForEach(characterCM.classArray, id: \.self) { charClass in
+                            Text(charClass.name).tag(charClass.name)
+                        }
+                    }.onAppear {
+                        Task {
+                            await characterCM.getData()
+                        }
+                    }
+                    
+                }
+                .font(.title2)
+                    
+//                TextField("Race", text: $character.race)
+//                    .font(.title2)
+                HStack{
+                    Text("Please select a Race: ")
+                    Picker("Race", selection: $race) {
+                        ForEach(characterRM.raceArray, id: \.self) { race in
+                            Text(race.name).tag(race.name)
+                        }
+                    }.onAppear {
+                        Task{
+                            await characterRM.getData()
+                        }
+                        
+                    }
+                    
+                }.font(.title2)
+                HStack{
+                    Text("Please select an alignment: ")
+                    Picker("Alignment", selection: $alignment){
+                        ForEach(characterAM.alignmentArray, id: \.self) { alignment in
+                            Text(alignment.name).tag(alignment.name)
+                        }
+                    }.onAppear {
+                        Task{
+                            await characterAM.getData()
+                        }
+                        
+                    }
+                }
+                .font(.title2)
             }
             .disabled(character.id == nil ? false : true)
             .textFieldStyle(.roundedBorder)
@@ -59,19 +97,14 @@ struct CharacterDetailView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        characterVM.saveCharacter(name: name, characterClass: characterClass, race: race, background: background, alignment: alignment, level: level)
-
-                        presentSheet.toggle()
+                        characterVM.saveCharacter(name: name, characterClass: characterClass, race: race, alignment: alignment)
+                        dismiss()
+                        
                     } label: {
                         Text("Save")
                     }
 
                 }
-            }
-        }
-        .sheet(isPresented: $presentSheet) {
-            NavigationStack {
-                AbilityScoreView()
             }
         }
     }
@@ -80,7 +113,7 @@ struct CharacterDetailView: View {
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            CharacterDetailView(characterVM: CharacterViewModel(), character: Character())
+            CharacterDetailView(characterVM: CharacterViewModel(), characterRM: CharacterRaceModel(), characterCM: CharacterClassModel(), characterAM: CharacterAlignmentModel(), character: Character())
 
         }
         

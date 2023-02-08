@@ -23,8 +23,10 @@ struct HomePostLogin: View {
         NavigationStack {
             List(charVM.characterList) { character in
                 NavigationLink {
-                    CharacterDetailView(characterVM: charVM, character: character)
+//                    CharacterDetailView(characterVM: charVM, characterRM: CharacterRaceModel(), characterCM: CharacterClassModel(), characterAM: CharacterAlignmentModel(), character: character)
+                    SecondCharacterView(character: character)
                 } label: {
+                    
                     Text(character.name)
                         .font(.title2)
                 }
@@ -57,7 +59,7 @@ struct HomePostLogin: View {
             }
             .sheet(isPresented: $sheetIsPresented) {
                 NavigationStack {
-                    CharacterDetailView(characterVM: charVM, character: Character())
+                    CharacterDetailView(characterVM: charVM, characterRM: CharacterRaceModel(), characterCM: CharacterClassModel(), characterAM: CharacterAlignmentModel(), character: Character())
                 }
             }
             .onAppear(perform: self.charVM.getCharacters)

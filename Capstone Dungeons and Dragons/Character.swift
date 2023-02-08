@@ -13,11 +13,10 @@ struct Character: Identifiable, Codable {
     var name = ""
     var characterClass = ""
     var race = ""
-    var background = ""
     var alignment = ""
-    var level = ""
+    
     
     var dictionary: [String: Any] {
-        return ["name": name, "characterClass": characterClass, "race": race, "background": background, "alignment": alignment, "level": level]
+        return ["name": name, "characterClass": characterClass, "race": race, "alignment": alignment]
     }
 }
