@@ -10,6 +10,11 @@ import Firebase
 import FirebaseFirestoreSwift
 import FirebaseAuth
 
+let loginBackgroundGradient = LinearGradient(
+    colors: [Color("StartingGradientRed"), Color("EndingGradientRed")],
+    startPoint: .top, endPoint: .bottom)
+
+
 struct HomePostLogin: View {
 
     @ObservedObject var charVM = CharacterViewModel()
@@ -20,50 +25,58 @@ struct HomePostLogin: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        NavigationStack {
-            List(charVM.characterList) { character in
-                NavigationLink {
-//                    CharacterDetailView(characterVM: charVM, characterRM: CharacterRaceModel(), characterCM: CharacterClassModel(), characterAM: CharacterAlignmentModel(), character: character)
-                    SecondCharacterView(character: character)
-                } label: {
-                    
-                    Text(character.name)
-                        .font(.title2)
-                }
+        ZStack{
+            loginBackgroundGradient
+                .ignoresSafeArea()
+            HStack{
+                NavigationStack {
+                    List(charVM.characterList) { character in
+                        NavigationLink {
+                            SecondCharacterView(character: character)
+                        } label: {
+                            
+                            Text(character.name)
+                                .font(.custom("Cinzel", size: 20))
+                        }
 
-            }
-            .listStyle(.plain)
-            .navigationTitle("Characters")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Sign Out") {
-                        do {
-                            try Auth.auth().signOut()
-                            print("Log out successful")
-                            dismiss()
-                        } catch {
-                            print("ERROR: Could not sign out!")
+                    }
+                    .listStyle(.plain)
+                    .navigationTitle("Characters")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button("Sign Out") {
+                                do {
+                                    try Auth.auth().signOut()
+                                    print("Log out successful")
+                                    dismiss()
+                                } catch {
+                                    print("ERROR: Could not sign out!")
+                                }
+                            }
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                sheetIsPresented.toggle()
+
+                            } label: {
+                                Image(systemName: "plus")
+                            }
+
                         }
                     }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        sheetIsPresented.toggle()
-
-                    } label: {
-                        Image(systemName: "plus")
+                    .sheet(isPresented: $sheetIsPresented) {
+                        NavigationStack {
+                            CharacterDetailView(characterVM: charVM, characterRM: CharacterRaceModel(), characterCM: CharacterClassModel(), characterAM: CharacterAlignmentModel(), character: Character())
+                        }
                     }
-
+                    .onAppear(perform: self.charVM.getCharacters)
                 }
+                .font(.custom("Cinzel", size: 20))
             }
-            .sheet(isPresented: $sheetIsPresented) {
-                NavigationStack {
-                    CharacterDetailView(characterVM: charVM, characterRM: CharacterRaceModel(), characterCM: CharacterClassModel(), characterAM: CharacterAlignmentModel(), character: Character())
-                }
-            }
-            .onAppear(perform: self.charVM.getCharacters)
+            
         }
+        
     }
     init() {
         charVM.getCharacters()

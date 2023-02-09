@@ -11,6 +11,11 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 
+let loginViewBackgroundGradient = LinearGradient(
+    colors: [Color("StartingGradientRed"), Color("EndingGradientRed")],
+    startPoint: .top, endPoint: .bottom)
+
+
 struct LoginView: View {
     
 
@@ -26,70 +31,79 @@ struct LoginView: View {
     let db = Firestore.firestore()
     
     var body: some View{
-        VStack {
-            Group {
-                TextField("Email", text: $user.email)
-                    .keyboardType(.emailAddress)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
-                    .submitLabel(.next)
+        ZStack{
+            loginViewBackgroundGradient
+                .ignoresSafeArea()
+            VStack {
+                Group {
+                    TextField("Email", text: $user.email)
+                        .keyboardType(.emailAddress)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .submitLabel(.next)
 
-                    .onChange(of: user.email) { _ in
-                        enableButtons()
-                    }
+                        .onChange(of: user.email) { _ in
+                            enableButtons()
+                        }
+                    
+                    SecureField("Password", text: $user.password)
+                        .textInputAutocapitalization(.never)
+                        .submitLabel(.done)
+
+                        .onChange(of: user.password) { _ in
+                            enableButtons()
+                        }
+                }
+                .textFieldStyle(.roundedBorder)
+                .overlay{
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(.gray.opacity(0.5), lineWidth: 2)
+                }
+                .padding(.horizontal)
                 
-                SecureField("Password", text: $user.password)
-                    .textInputAutocapitalization(.never)
-                    .submitLabel(.done)
+                HStack {
+                    Button {
 
-                    .onChange(of: user.password) { _ in
-                        enableButtons()
+                        register()
+
+                    } label: {
+                        Text("Sign Up")
+                            .foregroundColor(Color.black)
                     }
-            }
-            .textFieldStyle(.roundedBorder)
-            .overlay{
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(.gray.opacity(0.5), lineWidth: 2)
-            }
-            .padding(.horizontal)
-            
-            HStack {
-                Button {
+                    .padding(.trailing)
+                    Button {
 
-                    register()
+                        login()
 
-                } label: {
-                    Text("Sign Up")
+                    } label: {
+                        Text("Log In")
+                            .foregroundColor(Color.black)
+                    }
+                    .padding(.leading)
+                    
                 }
-                .padding(.trailing)
-                Button {
-
-                    login()
-
-                } label: {
-                    Text("Log In")
-                }
-                .padding(.leading)
+                .disabled(buttonsDisabled)
+                .buttonStyle(.borderedProminent)
+                .font(.title2)
+                .padding(.top)
+                
             }
-            .disabled(buttonsDisabled)
-            .buttonStyle(.borderedProminent)
-            .font(.title2)
-            .padding(.top)
+            .alert(alertMessage, isPresented: $showingAlert) {
+                Button("OK", role: .cancel) {}
+            }
             
-        }
-        .alert(alertMessage, isPresented: $showingAlert) {
-            Button("OK", role: .cancel) {}
+            .onAppear{
+                if Auth.auth().currentUser != nil {
+                    print("Login Success!")
+                    presentSheet = true
+                }
+            }
+            .fullScreenCover(isPresented: $presentSheet) {
+                HomePostLogin()
+            }
         }
         
-        .onAppear{
-            if Auth.auth().currentUser != nil {
-                print("Login Success!")
-                presentSheet = true
-            }
-        }
-        .fullScreenCover(isPresented: $presentSheet) {
-            HomePostLogin()
-        }
+       
     }
     
     func enableButtons() {

@@ -6,29 +6,45 @@
 //
 
 import SwiftUI
+//struct customColor {
+//    static let startingRed = Color("StartingGradientRed")
+//    static let endingRed = Color("EndingGradientRed")
+//}
+let secondCharacterBackgroundGradient = LinearGradient(
+    colors: [Color("StartingGradientRed"), Color("EndingGradientRed")],
+    startPoint: .top, endPoint: .bottom)
 
 struct SecondCharacterView: View {
     @State var character: Character
+    
 //    @State private var sheetIsPresented = false
     var body: some View {
-        
-        List {
-            HStack{
-                Text("Name: ")
-                Text(character.name)
+        ZStack{
+            secondCharacterBackgroundGradient
+                .ignoresSafeArea()
+            VStack{
+                
+                HStack{
+                    Text("Name: ")
+                    Text(character.name)
+                }
+                HStack{
+                    Text("Class: ")
+                    Text(character.characterClass)
+                }
+                HStack{
+                    Text("Race: ")
+                    Text(character.race)
+                }
+                HStack{
+                    Text("Alignment: ")
+                    Text(character.alignment)
+                }
+                
             }
-            HStack{
-                Text("Class: ")
-                Text(character.characterClass)
-            }
-            HStack{
-                Text("Race: ")
-                Text(character.race)
-            }
-            HStack{
-                Text("Alignment: ")
-                Text(character.alignment)
-            }
+            .font(.custom("Cinzel", size: 20))
+            
+            
         }
     }
 }
