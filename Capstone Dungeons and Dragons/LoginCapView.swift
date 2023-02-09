@@ -11,6 +11,8 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 
+
+//Fix commits
 let loginViewBackgroundGradient = LinearGradient(
     colors: [Color("StartingGradientRed"), Color("EndingGradientRed")],
     startPoint: .top, endPoint: .bottom)
