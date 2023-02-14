@@ -48,6 +48,7 @@ struct CharacterDetailView: View {
                         }
                         .accentColor(Color.black)
                         
+                        
                     }
                     
                     HStack{
@@ -111,6 +112,7 @@ struct CharacterDetailView: View {
                     }
                 }
             }
+            .foregroundColor(Color.black)
             .font(.custom("Cinzel", size: 20))
         }
         

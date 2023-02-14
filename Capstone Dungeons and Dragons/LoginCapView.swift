@@ -36,7 +36,11 @@ struct LoginView: View {
         ZStack{
             loginViewBackgroundGradient
                 .ignoresSafeArea()
+            
             VStack {
+                Image("DND_Char")
+                    .resizable()
+                    .scaledToFit()
                 Group {
                     TextField("Email", text: $user.email)
                         .keyboardType(.emailAddress)

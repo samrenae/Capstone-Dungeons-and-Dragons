@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
+import Firebase
 
 class UserViewModel: ObservableObject {
     @Published var user = User()

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D3569F92995A22B0027928F /* Cinzel-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D3569F82995A22B0027928F /* Cinzel-VariableFont_wght.ttf */; };
 		2D3569FB2995A8820027928F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D3569FA2995A8820027928F /* GoogleService-Info.plist */; };
+		2D3569FD299C213F0027928F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2D3569FC299C213F0027928F /* README.md */; };
 		2D6193B429860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193B329860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift */; };
 		2D6193B629860A8C001FCF77 /* LoginCapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6193B529860A8C001FCF77 /* LoginCapView.swift */; };
 		2D6193B829860A8D001FCF77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6193B729860A8D001FCF77 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		2D3569F72995A18C0027928F /* Capstone-Dungeons-and-Dragons-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Capstone-Dungeons-and-Dragons-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2D3569F82995A22B0027928F /* Cinzel-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cinzel-VariableFont_wght.ttf"; path = "../../../Downloads/Cinzel/Cinzel-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		2D3569FA2995A8820027928F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D3569FC299C213F0027928F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2D6193B029860A8C001FCF77 /* Capstone Dungeons and Dragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Capstone Dungeons and Dragons.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6193B329860A8C001FCF77 /* Capstone_Dungeons_and_DragonsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capstone_Dungeons_and_DragonsApp.swift; sourceTree = "<group>"; };
 		2D6193B529860A8C001FCF77 /* LoginCapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCapView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		2D6193A729860A8C001FCF77 = {
 			isa = PBXGroup;
 			children = (
+				2D3569FC299C213F0027928F /* README.md */,
 				2D6193B229860A8C001FCF77 /* Capstone Dungeons and Dragons */,
 				2D6193B129860A8C001FCF77 /* Products */,
 			);
@@ -182,6 +185,7 @@
 			files = (
 				2D3569F92995A22B0027928F /* Cinzel-VariableFont_wght.ttf in Resources */,
 				2D3569FB2995A8820027928F /* GoogleService-Info.plist in Resources */,
+				2D3569FD299C213F0027928F /* README.md in Resources */,
 				2D6193BB29860A8D001FCF77 /* Preview Assets.xcassets in Resources */,
 				2D6193B829860A8D001FCF77 /* Assets.xcassets in Resources */,
 			);
